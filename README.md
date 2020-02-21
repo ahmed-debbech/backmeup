@@ -1,2 +1,2 @@
-# Backup Me
+# Back Me Up
 A Shell command to backup data of the already-connected user to shell and restoring them when needed.
