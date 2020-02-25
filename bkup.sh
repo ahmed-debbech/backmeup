@@ -2,6 +2,7 @@
 
 source help.sh
 source copy.sh
+source archiving.sh
 
 if [[ $# -eq 0 ]]; then
         echo -e "No options provided.. Please enter an option!\n"
@@ -21,7 +22,7 @@ else
 		case ${arr[$i]} in
 			-s) copy 
 				;;
-			-ar) 
+			-ar) archive
 				;;
 			-c)
 				;;
