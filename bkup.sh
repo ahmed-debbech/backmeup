@@ -3,6 +3,7 @@
 source help.sh
 source copy.sh
 source archiving.sh
+source compressing.sh
 
 if [[ $# -eq 0 ]]; then
         echo -e "No options provided.. Please enter an option!\n"
@@ -24,7 +25,7 @@ else
 				;;
 			-ar) archive
 				;;
-			-c)
+			-c) compress
 				;;
 			-r)
 				;;
