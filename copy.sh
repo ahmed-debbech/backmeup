@@ -3,7 +3,7 @@
 checkDirExistance(){
 	fold="/backup/${USER}";
 	if [[ -d "$fold" ]]; then
-		echo -e "$fold found! \n";
+		echo -e "$fold directory found! \n";
 	else
 	    	sudo mkdir $fold;
 		echo -e "$fold created.\n";
@@ -11,5 +11,7 @@ checkDirExistance(){
 }
 copy(){
 	checkDirExistance;
-	
+	cwd=$(pwd);
+	sudo cp -R $cwd "/backup/${USER}";	
+	echo -e "Copied successfully\n";
 }

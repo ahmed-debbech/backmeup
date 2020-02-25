@@ -19,7 +19,7 @@ else
 	for(( i=0; i<=$#; i++ ));
 	do
 		case ${arr[$i]} in
-			-s) copy	
+			-s) copy 
 				;;
 			-ar) 
 				;;
