@@ -4,20 +4,19 @@ checkExistance(){
 	fold="/backup/${USER}"
 	if [[ -d ${fold} ]]; then
 		echo -e "Folder found!\n"
-		exit 0
+		return 0
 	else
 		echo -e "No folder found  to compress!\n"
-		exit 1
+		return 1
 	fi
 }
 archive(){
 	echo "archiving... Please Wait"
-	checkExistance;
-	if [[ $? -eq 0 ]]; then 
-		fold="/backup";
-		cd /backup
-		sudo tar -cf ${USER}.tar ${fold};
-		sudo rm -r /backup/${USER}
+	ret=${checkExistance};
+	if [[ $ret -eq 0 ]]; then 
+		fold="/backup/${USER}";
+		sudo tar -czf ${fold}.tar ${fold};
+		sudo rm -r ${fold}
 		echo "Done archiving."
 	fi
 }
