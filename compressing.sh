@@ -10,20 +10,6 @@ checkExist(){
                 ret=1
         fi
 }
-menu(){
-	until [[ $x -eq 1 || $x -eq 2 ]]
-	do
-		echo "1 : compress in gz format"
-		echo "2 : compress in xy format"
-		read x;
-	done
-	case ${x} in
-		1) x = 1;
-			;;
-		2) x = 2;
-			;;
-	esac
-}
 compress(){
 	ret=$(checkExist) 
 	echo "Compressing... Please Wait"
@@ -32,14 +18,14 @@ compress(){
 		until [[ $x -eq 1 || $x -eq 2 ]]
 		do
 			echo "1: compress in gz format"
-			echo "2: compress in xy format"
+			echo "2: compress in bz2 format"
 			read x
 		done
 		fold="/backup/${USER}"
 		if [[ ${x} -eq 1 ]]; then
 		sudo tar -czf ${fold}.tar.gz ${fold}.tar
 		else
-		sudo tar -czf ${fold}.tar.xy ${fold}.tar
+		sudo tar -czf ${fold}.tar.bz2 ${fold}.tar
 		fi
 		sudo rm ${fold}.tar
 		echo "Done compressing."
