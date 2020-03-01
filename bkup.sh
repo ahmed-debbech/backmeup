@@ -5,6 +5,7 @@ source copy.sh
 source archiving.sh
 source compressing.sh
 source restore.sh
+source graphics.sh
 
 if [[ $# -eq 0 ]]; then
         echo -e "No options provided.. Please enter an option!\n"
@@ -19,7 +20,7 @@ else
 	done
 	
 	#start exiecuting the commands
-	for(( i=0; i<=$#; i++ ));
+	for(( i=0; i<=$#-1; i++ ));
 	do
 		case ${arr[$i]} in
 			-s) copy 
@@ -30,9 +31,13 @@ else
 				;;
 			-r) restore
 				;;
+			-g) graph
+				;;
 			-h) help
 				;;
 			-help) help
+				;;
+			*) echo "This option is not available atm"
 				;;
 		esac
 	done
