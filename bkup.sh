@@ -29,6 +29,10 @@ else
 				;;
 			-c) compress
 				;;
+			-c1) compress 1
+				;;
+			-c2) compress 2
+				;;
 			-r) restore
 				;;
 			-g) graph

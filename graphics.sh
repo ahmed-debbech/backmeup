@@ -18,7 +18,15 @@ graph(){
             ;;
         2) ./bkup.sh -ar
             ;;
-        3) ./bkup.sh -c
+        3) set=$(yad --width 300 --title "Back Me Up" \
+            --text "Choose in which format to compress" \
+            --button="GZ format":1 --buttons-layout=center \
+            --button="BZ2 format":2 )
+            if [[ $? -eq 1 ]]; then
+            ./bkup.sh -c1
+            else
+            ./bkup.sh -c2
+            fi
             ;;
         4) ./bkup.sh -r
             ;;
