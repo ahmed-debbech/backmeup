@@ -6,8 +6,8 @@ This is a school project to grasp the Shell (Bash) scripting language and syntax
 
 ### Usage
 #### Graphic Usage:
-To start the grphics use the -g option
-
+To start the grphics use the -g option \
+(Graphics are made thanks to YAD)
 #### Command line usage:
 bkup [OPTIONS]
 * -s : Copy the data of the currect directory to /backup/$USER 
